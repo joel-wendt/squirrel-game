@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Cherry
   - HPGem
+  - climbingTree
+  - upWind
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - EnemyPathBlocker
   - Player
   - Platform
-  - 
+  - climbingTree
   - 
   - 
   - 
