@@ -3223,7 +3223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 500331583}
   - component: {fileID: 500331584}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Log (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3416,7 +3416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 539545841}
   - component: {fileID: 539545842}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Log (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

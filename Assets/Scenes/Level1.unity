@@ -3002,7 +3002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 500331583}
   - component: {fileID: 500331584}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Log (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5296,7 +5296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 844002224}
   - component: {fileID: 844002225}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Log (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58449,7 +58449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1942279168}
   - component: {fileID: 1942279167}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Log (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
