@@ -9,8 +9,6 @@ TagManager:
   - Enemy
   - Cherry
   - HPGem
-  - climbingTree
-  - upWind
   layers:
   - Default
   - TransparentFX

@@ -3089,7 +3089,7 @@ GameObject:
   - component: {fileID: 347152112}
   m_Layer: 11
   m_Name: Log (5)
-  m_TagString: climbingTree
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6642,7 +6642,7 @@ GameObject:
   - component: {fileID: 829927249}
   m_Layer: 11
   m_Name: Log (4)
-  m_TagString: climbingTree
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11593,7 +11593,7 @@ GameObject:
   - component: {fileID: 1213993940}
   m_Layer: 11
   m_Name: Log (3)
-  m_TagString: climbingTree
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12531,7 +12531,7 @@ GameObject:
   - component: {fileID: 1356109482}
   m_Layer: 11
   m_Name: Log (2)
-  m_TagString: climbingTree
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13901,7 +13901,7 @@ GameObject:
   - component: {fileID: 1534329691}
   m_Layer: 11
   m_Name: Log (6)
-  m_TagString: climbingTree
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29828,7 +29828,7 @@ GameObject:
   - component: {fileID: 1942279167}
   m_Layer: 11
   m_Name: Log (1)
-  m_TagString: climbingTree
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
