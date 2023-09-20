@@ -11,6 +11,7 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     // Variables
+    [SerializeField] private float glideSpeed;
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float jumpForce = 300f;
     [SerializeField] private Transform leftFoot, rightFoot;
@@ -23,6 +24,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip jumpSound, hurtSound;
     [SerializeField] private AudioClip[] pickupSounds;
     [SerializeField] private GameObject gemParticles, jumpParticles;
+    [SerializeField] private float jumpGlide = 100f;
+
+    //wallclimb
+    private float vertical;
+    private float speed = 8f;
+    private bool isLadder;
+    private bool isClimbing;
 
     private bool isGrounded;
     private bool canMove;
@@ -63,14 +71,66 @@ public class PlayerMovement : MonoBehaviour
             FlipSprite(false);
         }
 
-        if (Input.GetButtonDown("Jump") && CheckIfGrounded() == true)
+        if (Input.GetButtonDown("Jump") && CheckIfGrounded() == true) //hoppa
         {
             Jump();
+        }
+
+        if(CheckIfGrounded() == true)
+        {
+            rgbd.drag = 0f;
+        }
+
+        if (Input.GetButtonDown("Jump") && CheckIfGrounded() == false) //glida
+        {
+            Glide();
         }
 
         anim.SetFloat("MoveSpeed", Mathf.Abs(rgbd.velocity.x));
         anim.SetFloat("VerticalSpeed", rgbd.velocity.y);
         anim.SetBool("IsGrounded", CheckIfGrounded());
+
+        if (isLadder == true && Mathf.Abs(vertical) > 0f)
+        {
+            isClimbing = true;
+        }
+
+    }
+
+    //wallclimb
+    private void OnTriggerExit2D(Collider2D collision) //för en stege
+    {
+        if (collision.CompareTag("Wall"))
+        {
+            isLadder = false;
+            isClimbing = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) //för klättring
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isLadder = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall")) //för kättring
+        {
+            isLadder = false;
+            isClimbing = false;
+        }
+    }
+
+    private void Glide()//glidning
+    {
+        print("1");
+
+        // rgbd.AddForce(Vector2.right * 1000);
+
+        rgbd.drag = 7f;
 
     }
 
@@ -83,7 +143,25 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        rgbd.velocity = new Vector2(horizontalValue * moveSpeed * Time.deltaTime, rgbd.velocity.y);
+        if(rgbd.drag == 0)//farten om man är på marken eller hoppar
+        {
+            rgbd.velocity = new Vector2(horizontalValue * moveSpeed * Time.deltaTime, rgbd.velocity.y);
+        }
+        else if(rgbd.drag != 0)//farten om man glider
+        {
+            rgbd.velocity = new Vector2(horizontalValue * glideSpeed * Time.deltaTime, rgbd.velocity.y);
+        }
+
+        //wallclimbing
+        if (isClimbing == true) //klättra verticalt
+        {
+            rgbd.gravityScale = 0f;
+            rgbd.velocity = new Vector2(rgbd.velocity.x, vertical * speed);
+        }
+        else if (isClimbing == false)
+        {
+            rgbd.gravityScale = 2.5f;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -97,6 +175,12 @@ public class PlayerMovement : MonoBehaviour
             int randomValue = Random.Range(0, pickupSounds.Length);
             audioSource.pitch = Random.Range(0.85f, 1.15f);
             audioSource.PlayOneShot(pickupSounds[randomValue], 0.3f);
+
+            //wallclimb
+            if (other.CompareTag("Wall"))//för en stege
+            {
+                isLadder = true;
+            }
         }
 
         if (other.CompareTag("HPGem"))
