@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Variables
     [SerializeField] private float glideSpeed;
+    [SerializeField] private float fallSpeed;
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float jumpForce = 300f;
     [SerializeField] private Transform leftFoot, rightFoot;
@@ -24,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip jumpSound, hurtSound;
     [SerializeField] private AudioClip[] pickupSounds;
     [SerializeField] private GameObject gemParticles, jumpParticles;
-    [SerializeField] private float jumpGlide = 100f;
 
     //wallclimb
     private float vertical;
@@ -90,6 +90,9 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("VerticalSpeed", rgbd.velocity.y);
         anim.SetBool("IsGrounded", CheckIfGrounded());
 
+        //wallclimb
+        vertical = Input.GetAxis("Vertical");
+
         if (isLadder == true && Mathf.Abs(vertical) > 0f)
         {
             isClimbing = true;
@@ -98,6 +101,31 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //wallclimb
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Cherry"))
+        {
+            Destroy(other.gameObject);
+            cherriesFound++;
+            cherryText.text = "" + cherriesFound;
+            // Using an array[]
+            int randomValue = Random.Range(0, pickupSounds.Length);
+            audioSource.pitch = Random.Range(0.85f, 1.15f);
+            audioSource.PlayOneShot(pickupSounds[randomValue], 0.3f);
+        }
+
+        //wallclimb
+        if (other.CompareTag("Wall"))//för en stege
+        {
+            isLadder = true;
+        }
+
+        if (other.CompareTag("HPGem"))
+        {
+            RestoreHP(other.gameObject);
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision) //för en stege
     {
         if (collision.CompareTag("Wall"))
@@ -130,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
 
         // rgbd.AddForce(Vector2.right * 1000);
 
-        rgbd.drag = 7f;
+        rgbd.drag = fallSpeed;
 
     }
 
@@ -161,31 +189,6 @@ public class PlayerMovement : MonoBehaviour
         else if (isClimbing == false)
         {
             rgbd.gravityScale = 2.5f;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Cherry"))
-        {
-            Destroy(other.gameObject);
-            cherriesFound++;
-            cherryText.text = "" + cherriesFound;
-            // Using an array[]
-            int randomValue = Random.Range(0, pickupSounds.Length);
-            audioSource.pitch = Random.Range(0.85f, 1.15f);
-            audioSource.PlayOneShot(pickupSounds[randomValue], 0.3f);
-
-            //wallclimb
-            if (other.CompareTag("Wall"))//för en stege
-            {
-                isLadder = true;
-            }
-        }
-
-        if (other.CompareTag("HPGem"))
-        {
-            RestoreHP(other.gameObject);
         }
     }
 

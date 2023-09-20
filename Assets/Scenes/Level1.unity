@@ -909,6 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glideSpeed: 350
+  fallSpeed: 7
   moveSpeed: 250
   jumpForce: 525
   leftFoot: {fileID: 1463441555}
@@ -928,7 +929,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17a3f1235d0dcf541871289348082102, type: 3}
   gemParticles: {fileID: 168174995012347046, guid: 030e1d3b020717249bdbe02c9f2a69f6, type: 3}
   jumpParticles: {fileID: 3127339913520626108, guid: d14a9b5be971d9c4e940e13063534e2b, type: 3}
-  jumpGlide: 500
   cherriesFound: 0
 --- !u!82 &163024693
 AudioSource:
