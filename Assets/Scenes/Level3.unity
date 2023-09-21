@@ -5120,9 +5120,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1568081727145526571, guid: c1331ff9cac87884db73fc96dec202ce, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1568081727145526571, guid: c1331ff9cac87884db73fc96dec202ce, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3436451080996148393, guid: c1331ff9cac87884db73fc96dec202ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 97.36
+      value: 97.2
       objectReference: {fileID: 0}
     - target: {fileID: 3436451080996148393, guid: c1331ff9cac87884db73fc96dec202ce, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9082,6 +9090,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5865327569511121519, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
       propertyPath: m_Name
       value: climbingTree (1)
