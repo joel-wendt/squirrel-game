@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isLadder;
     private bool isClimbing;
 
+    private bool isGliding;
     private bool isGrounded;
     private bool canMove;
     private float horizontalValue;
@@ -65,30 +66,31 @@ public class PlayerMovement : MonoBehaviour
         {
             FlipSprite(true);
         }
-
-        if (horizontalValue > 0)
+        else if(horizontalValue > 0)
         {
             FlipSprite(false);
         }
+
 
         if (Input.GetButtonDown("Jump") && CheckIfGrounded() == true) //hoppa
         {
             Jump();
         }
-
-        if(CheckIfGrounded() == true)
-        {
-            rgbd.drag = 0f;
-        }
-
-        if (Input.GetButtonDown("Jump") && CheckIfGrounded() == false) //glida
+        else if (Input.GetButtonDown("Jump") && CheckIfGrounded() == false) //glida
         {
             Glide();
+        }
+        else if(CheckIfGrounded() == true)
+        {
+            rgbd.drag = 0f;
+            isGliding = false;
         }
 
         anim.SetFloat("MoveSpeed", Mathf.Abs(rgbd.velocity.x));
         anim.SetFloat("VerticalSpeed", rgbd.velocity.y);
         anim.SetBool("IsGrounded", CheckIfGrounded());
+        anim.SetBool("isGliding", isGliding);
+
 
         //wallclimb
         vertical = Input.GetAxis("Vertical");
@@ -154,12 +156,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Glide()//glidning
     {
-        print("1");
-
-        // rgbd.AddForce(Vector2.right * 1000);
+        isGliding = true;
 
         rgbd.drag = fallSpeed;
-
     }
 
     // FixedUpdate is always called at the same speed regardless of fps
