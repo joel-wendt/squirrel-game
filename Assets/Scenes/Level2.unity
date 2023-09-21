@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glideSpeed: 300
-  fallSpeed: 5
+  fallSpeed: 12
   moveSpeed: 200
   jumpForce: 525
   leftFoot: {fileID: 1463441555}
