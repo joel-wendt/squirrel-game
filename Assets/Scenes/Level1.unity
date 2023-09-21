@@ -366,6 +366,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &43112604
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6088366820122798721, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_Name
+      value: BabySquirrelVivi
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
 --- !u!1 &50500298
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,8 +1024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57523007bc395b43b833624b11320aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glideSpeed: 350
-  fallSpeed: 7
+  glideSpeed: 300
+  fallSpeed: 5
   moveSpeed: 250
   jumpForce: 525
   leftFoot: {fileID: 1463441555}
@@ -55804,63 +55861,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1777985473
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6088366820122798721, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_Name
-      value: BabySquirrel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 34.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 14.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619923770855191712, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 042eff802780a384b9be0cdfba42fc9d, type: 3}
 --- !u!1 &1789996454
 GameObject:
   m_ObjectHideFlags: 0
@@ -57408,6 +57408,6 @@ SceneRoots:
   - {fileID: 1122527650}
   - {fileID: 2064622960}
   - {fileID: 252746960}
-  - {fileID: 1777985473}
   - {fileID: 432123556}
   - {fileID: 258664144}
+  - {fileID: 43112604}
