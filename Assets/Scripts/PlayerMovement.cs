@@ -94,13 +94,14 @@ public class PlayerMovement : MonoBehaviour
         if (activateTimer == true) //Cooldown för glidhopp
         {
             jumpTimer -= 1 * Time.deltaTime;
-            print(jumpTimer);
+            //print(jumpTimer);
         }
 
         anim.SetFloat("MoveSpeed", Mathf.Abs(rgbd.velocity.x));
         anim.SetFloat("VerticalSpeed", rgbd.velocity.y);
         anim.SetBool("IsGrounded", CheckIfGrounded());
         anim.SetBool("isGliding", isGliding);
+        anim.SetBool("isClimbing", isClimbing);
 
 
         //wallclimb
