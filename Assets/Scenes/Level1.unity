@@ -1134,6 +1134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57523007bc395b43b833624b11320aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 0.2
+  glideJumpForce: 1000
   glideSpeed: 300
   fallSpeed: 12
   moveSpeed: 250
@@ -1944,7 +1946,6 @@ Transform:
   - {fileID: 1377110608}
   - {fileID: 705650380}
   - {fileID: 937272772}
-  - {fileID: 1502338708}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &260839528
@@ -2123,6 +2124,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1234910596}
     m_Modifications:
+    - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -813642133
+      objectReference: {fileID: 0}
     - target: {fileID: 5865327569511121519, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
       propertyPath: m_Name
       value: climbingTree (1)
@@ -4984,6 +4993,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1234910596}
     m_Modifications:
+    - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -813642133
+      objectReference: {fileID: 0}
     - target: {fileID: 5865327569511121519, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
       propertyPath: m_Name
       value: climbingTree (3)
@@ -9131,9 +9148,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -238882931
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1b17159fbca7f8c49ba317199f21ddfe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10049,9 +10066,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -238882931
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4d2f209cef1166b4a91c10460f192751, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12007,9 +12024,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -238882931
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 47580a5b685af054f9f30190628a1cc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -12036,68 +12053,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 569291377}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1502338707
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 258664144}
-    m_Modifications:
-    - target: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 78.07376
-      objectReference: {fileID: 0}
-    - target: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.3544216
-      objectReference: {fileID: 0}
-    - target: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.581938
-      objectReference: {fileID: 0}
-    - target: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5703783232957439785, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-      propertyPath: m_Name
-      value: BounceFrog
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
---- !u!4 &1502338708 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4800418276560697643, guid: 6ee93f8a66b4eb54abbbe66174bf53b4, type: 3}
-  m_PrefabInstance: {fileID: 1502338707}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1511004583
 GameObject:
   m_ObjectHideFlags: 0
@@ -62082,6 +62037,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1234910596}
     m_Modifications:
+    - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -813642133
+      objectReference: {fileID: 0}
     - target: {fileID: 5865327569511121519, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
       propertyPath: m_Name
       value: climbingTree (2)

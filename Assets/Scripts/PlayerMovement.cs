@@ -11,6 +11,8 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     // Variables
+    [SerializeField] private float waitTime;
+    [SerializeField] private float glideJumpForce;
     [SerializeField] private float glideSpeed;
     [SerializeField] private float fallSpeed;
     [SerializeField] private float moveSpeed = 1f;
@@ -32,22 +34,25 @@ public class PlayerMovement : MonoBehaviour
     private bool isLadder;
     private bool isClimbing;
 
+    private bool activateTimer = false;
     private bool isGliding;
     private bool isGrounded;
     private bool canMove;
+    private float jumpTimer = 0f;
     private float horizontalValue;
     private float rayDistance = 0.25f;
     private Animator anim;
     private Rigidbody2D rgbd;
     private SpriteRenderer rend;
     private AudioSource audioSource;
-    private int startingHealth = 3;
+    private int startingHealth = 1;
     private int currentHealth = 0;
     public int cherriesFound = 0;
 
     // Start is called before the first frame update, here we can connect Variables to Components inside Unity for example
     private void Start()
     {
+        jumpTimer = 0f;
         canMove = true;
         currentHealth = startingHealth;
         cherryText.text = "" + cherriesFound;
@@ -86,10 +91,17 @@ public class PlayerMovement : MonoBehaviour
             isGliding = false;
         }
 
+        if (activateTimer == true) //Cooldown för glidhopp
+        {
+            jumpTimer -= 1 * Time.deltaTime;
+            //print(jumpTimer);
+        }
+
         anim.SetFloat("MoveSpeed", Mathf.Abs(rgbd.velocity.x));
         anim.SetFloat("VerticalSpeed", rgbd.velocity.y);
         anim.SetBool("IsGrounded", CheckIfGrounded());
         anim.SetBool("isGliding", isGliding);
+        anim.SetBool("isClimbing", isClimbing);
 
 
         //wallclimb
@@ -156,9 +168,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Glide()//glidning
     {
-        isGliding = true;
-
         rgbd.drag = fallSpeed;
+
+        if (Input.GetButtonDown("Jump") && isGliding == true && jumpTimer <= 0f) //Ett hopp medan man glider
+        {
+            rgbd.AddForce(new Vector2(0, glideJumpForce));
+            jumpTimer = waitTime;
+            activateTimer = true; //aktiverar timern i update
+        }
+
+        isGliding = true;
     }
 
     // FixedUpdate is always called at the same speed regardless of fps

@@ -1281,8 +1281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57523007bc395b43b833624b11320aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 0.2
+  glideJumpForce: 1000
   glideSpeed: 300
-  fallSpeed: 5
+  fallSpeed: 12
   moveSpeed: 200
   jumpForce: 525
   leftFoot: {fileID: 1463441555}
@@ -2933,6 +2935,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1122527650}
     m_Modifications:
+    - target: {fileID: 1568081727145526571, guid: c1331ff9cac87884db73fc96dec202ce, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1568081727145526571, guid: c1331ff9cac87884db73fc96dec202ce, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -813642133
+      objectReference: {fileID: 0}
     - target: {fileID: 3436451080996148393, guid: c1331ff9cac87884db73fc96dec202ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 131.96
@@ -6807,11 +6817,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1568081727145526571, guid: c1331ff9cac87884db73fc96dec202ce, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1568081727145526571, guid: c1331ff9cac87884db73fc96dec202ce, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -813642133
       objectReference: {fileID: 0}
     - target: {fileID: 3436451080996148393, guid: c1331ff9cac87884db73fc96dec202ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10254,6 +10264,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1122527650}
     m_Modifications:
+    - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -813642133
+      objectReference: {fileID: 0}
     - target: {fileID: 5865327569511121519, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
       propertyPath: m_Name
       value: climbingTree
@@ -11667,11 +11685,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1434599845663856541, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -813642133
       objectReference: {fileID: 0}
     - target: {fileID: 5865327569511121519, guid: 3f7756b23f0fae1458b3face399789cf, type: 3}
       propertyPath: m_Name
