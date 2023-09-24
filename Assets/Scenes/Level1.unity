@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57523007bc395b43b833624b11320aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gravity: 1
+  Gravity: 50
   waitTime: 0
   glideJumpForce: 0
   glideSpeed: 300
