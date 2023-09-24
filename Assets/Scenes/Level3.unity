@@ -1346,7 +1346,7 @@ MonoBehaviour:
   glideJumpForce: 1000
   glideSpeed: 300
   fallSpeed: 12
-  moveSpeed: 200
+  moveSpeed: 250
   jumpForce: 525
   leftFoot: {fileID: 1463441555}
   rightFoot: {fileID: 586797145}
