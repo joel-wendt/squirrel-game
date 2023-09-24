@@ -11,6 +11,7 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     // Variables
+    [SerializeField] private float Gravity = 1f;
     [SerializeField] private float waitTime;
     [SerializeField] private float glideJumpForce;
     [SerializeField] private float glideSpeed;
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     private float jumpTimer = 0f;
     private float horizontalValue;
     private float rayDistance = 0.25f;
+    private Physics2D psy;
     private Animator anim;
     private Rigidbody2D rgbd;
     private SpriteRenderer rend;
@@ -60,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        //psy = GetComponent<Physics2D>();
     }
 
     // Update is called once per frame, as fast as possible
@@ -111,13 +114,19 @@ public class PlayerMovement : MonoBehaviour
         {
             isClimbing = true;
         }
-
     }
 
     //wallclimb
 
+    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("upWind") && isGliding == true) //Flygga uppåt
+        {
+            Physics2D.gravity = new Vector2(0, Gravity);
+        }
+
         if (other.CompareTag("Cherry"))
         {
             Destroy(other.gameObject);
@@ -146,6 +155,11 @@ public class PlayerMovement : MonoBehaviour
         {
             isLadder = false;
             isClimbing = false;
+        }
+
+        if (collision.CompareTag("upWind")) //Sluta flygga uppåt
+        {
+            Physics2D.gravity = new Vector3(0f, -9.81f);
         }
     }
 
