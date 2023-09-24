@@ -1338,6 +1338,9 @@ MonoBehaviour:
   cherryText: {fileID: 1570968968}
   jumpSound: {fileID: 8300000, guid: a4501ebbed3477542824d055aa0521c8, type: 3}
   hurtSound: {fileID: 8300000, guid: 4bd80ccecc132c647ac5b8cd54b153cd, type: 3}
+  landingSound: {fileID: 8300000, guid: 484f3390892617740bbd093595df4654, type: 3}
+  glidingSound: {fileID: 8300000, guid: e1e9c1b9e6dd419458bf9f39325156ab, type: 3}
+  airJumpSound: {fileID: 8300000, guid: b3c1b337607a4ca48ab1635fbd6d6c58, type: 3}
   pickupSounds:
   - {fileID: 8300000, guid: 17a3f1235d0dcf541871289348082102, type: 3}
   gemParticles: {fileID: 168174995012347046, guid: 030e1d3b020717249bdbe02c9f2a69f6, type: 3}
@@ -1779,6 +1782,7 @@ GameObject:
   - component: {fileID: 189983652}
   - component: {fileID: 189983651}
   - component: {fileID: 189983650}
+  - component: {fileID: 189983654}
   m_Layer: 0
   m_Name: '*LevelFinish*'
   m_TagString: Untagged
@@ -1818,6 +1822,7 @@ MonoBehaviour:
   textUnFinished: {fileID: 396413947}
   questGoal: 1
   levelToLoad: 3
+  questCompletedSound: {fileID: 8300000, guid: 528ce307f36cade40bceab89de80e40d, type: 3}
 --- !u!61 &189983651
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1936,6 +1941,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &189983654
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189983648}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &212293052
 GameObject:
   m_ObjectHideFlags: 0
@@ -15169,6 +15270,7 @@ MonoBehaviour:
   textUnFinished: {fileID: 396413947}
   questGoal: 20
   levelToLoad: 2
+  questCompletedSound: {fileID: 0}
 --- !u!1 &1735599705
 GameObject:
   m_ObjectHideFlags: 0
@@ -30407,7 +30509,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f784d1a563d0c404681dbf9775bbea20, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
