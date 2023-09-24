@@ -8,24 +8,28 @@ public class QuestDAD : MonoBehaviour
     [SerializeField] private GameObject dialogueBox, textFinished, textUnFinished;
     [SerializeField] private int questGoal = 10;
     [SerializeField] private int levelToLoad;
+    [SerializeField] private AudioClip questCompletedSound;
 
+    private AudioSource sourceAudio;
     private Animator anim;
     private bool LevelIsLoading = false;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        sourceAudio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            if(other.GetComponent<PlayerMovement>().cherriesFound >= questGoal)
+
+                if (other.GetComponent<PlayerMovement>().cherriesFound >= questGoal)
             {
+                sourceAudio.PlayOneShot(questCompletedSound);
                 dialogueBox.SetActive(true);
                 textFinished.SetActive(true);
-                anim.SetTrigger("DadHappy");
                 Invoke("LoadNextLevel", 5.0f);
                 LevelIsLoading = true;
             }
@@ -41,7 +45,6 @@ public class QuestDAD : MonoBehaviour
     private void LoadNextLevel()
     {
         SceneManager.LoadScene(levelToLoad);
-
     }
 
     private void OnTriggerExit2D(Collider2D other)
