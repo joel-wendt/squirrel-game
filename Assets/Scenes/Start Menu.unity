@@ -314,24 +314,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Made by
-
-    Joel, Lucas and Aina
-
-
-    Assets by:
-
-    Aina
-
-    ansimuz.itch.io
-
-    kenney.nl
-
-    opengameart.org/users/bart
-
-    jfxr.frozenfractal.com
-
-'
+  m_text: "Made by\nJoel, Lucas and Aina\n\nAssets by:\nAina\nansimuz.itch.io\nkenney.nl\nopengameart.org/users/bart\njfxr.frozenfractal.com\n\nMusic
+    by: \nContemplate the stars by Meyd\xE4n | https://linktr.ee/meydan\r\nMusic
+    promoted by https://www.chosic.com/free-music/all/\r\nCreative Commons CC BY
+    4.0\r\nhttps://creativecommons.org/licenses/by/4.0/\r\n \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ddc796a8c38097439392c12df6654e1, type: 2}
   m_sharedMaterial: {fileID: 7720317605608538217, guid: 4ddc796a8c38097439392c12df6654e1, type: 2}
@@ -358,8 +344,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -883,7 +869,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0c73d533b6d9c194c919c0252fa0a219, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8fd7de2967ba78e41839a493110ccde2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
