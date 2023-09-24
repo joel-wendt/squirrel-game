@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image fillColor;
     [SerializeField] private Color pinkHP, redHP;
     [SerializeField] private TMP_Text cherryText;
-    [SerializeField] private AudioClip jumpSound, hurtSound;
+    [SerializeField] private AudioClip jumpSound, hurtSound, landingSound, glidingSound, airJumpSound;
     [SerializeField] private AudioClip[] pickupSounds;
     [SerializeField] private GameObject gemParticles, jumpParticles;
 
@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 8f;
     private bool isLadder;
     private bool isClimbing;
+    private bool leftGround = false;
 
     private bool activateTimer = false;
     private bool isGliding;
@@ -188,7 +189,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rgbd.AddForce(new Vector2(0, glideJumpForce));
             jumpTimer = waitTime;
+            audioSource.PlayOneShot(airJumpSound, 1f);
             activateTimer = true; //aktiverar timern i update
+        }
+        else
+        {
+            audioSource.PlayOneShot(glidingSound, 1f);
         }
 
         isGliding = true;
@@ -324,10 +330,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (leftHit.collider != null && leftHit.collider.CompareTag("Ground") || rightHit.collider != null && rightHit.collider.CompareTag("Ground"))
         {
+            if (leftGround == true)
+            {
+                audioSource.PlayOneShot(landingSound, 1f);
+                leftGround = false;
+            }
             return true;
         }
         else
         {
+            leftGround = true;
             return false;
         }
     }

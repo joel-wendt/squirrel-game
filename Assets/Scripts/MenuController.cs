@@ -19,7 +19,7 @@ public class MenuController : MonoBehaviour
 
     public void CloseCredits()
     {
-        creditsPanel?.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 
     public void QuitGame()
